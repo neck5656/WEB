@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form action="#" method="post" onsubmit="registerUser(event)">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button class="btn">Create Account</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="index.html">Login</a></p>
+        
+        <!-- Notification Popup -->
+        <div class="notification" id="notification">
+            Account created successfully! Redirecting to login...
+        </div>
+    </div>
+
+    <script>
+        function registerUser(event) {
+            event.preventDefault();
+
+            // Get user inputs
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Save to localStorage
+            localStorage.setItem('registeredUsername', username);
+            localStorage.setItem('registeredPassword', password);
+
+            // Show notification
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+
+            // Redirect to the login page after 2,5 seconds
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

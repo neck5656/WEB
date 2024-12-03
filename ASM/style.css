@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/HD-wallpaper-blue-neon-glowing-lights-iphone-13-pro-stock-background-13-pro.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 100vh;/*Makes the body fill the entire height of the viewport. */
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px; 
+    border: 1px solid #a1c4fd; 
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;/*1rem=16px*/
+    backdrop-filter: blur(10px); /* blur effect*/
+}
+    
+.login-container {
+    background: rgba(0, 0, 0, 0.3); 
+    width: 320px;
+    padding: 25px;
+    background-color: transparent;
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
+    text-align: center;
+    
+}
+
+.login-container h2 {
+    margin-bottom: 20px;/* Adds spacing below the heading.*/
+    font-size: 1.5rem;
+    color: #a1c4fd; 
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #dbe4f0;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #a1c4fd;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+
+
+
+.btn {
+ width: 130px;
+ height: 40px;
+ font-size: 1.1em;
+ cursor: pointer;
+ background-image: linear-gradient(135deg, #35aaf3, #1f57c8,#f012fc);
+ color: #fff;
+ border: none;
+ border-radius: 5px;
+ transition: all .4s;/*smooth transition*/
+}
+
+.btn:hover {
+ border-radius: 5px;
+ transform: translateY(-10px);
+ box-shadow: 0 7px 0 -2px #f012fc,
+  0 15px 0 -4px #1f57c8,
+  0 16px 10px -3px #39a2db;
+}
+
+.btn:active {
+ transition: all 0.2s;
+ transform: translateY(-5px);
+ box-shadow: 0 2px 0 -2px #f012fc,
+  0 8px 0 -4px #1f57c8,
+  0 12px 10px -3px #39a2db;
+}
+
+.signup-link {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #dbe4f0; 
+}
+
+.signup-link a {
+    color: #f012fc; 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.signup-link a:hover {
+    color: #4c6ef5; 
+    
+}
+/* Notification Popup */
+.notification {
+    display: none; /* Hide by default */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background-color: #0c4fb3;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    z-index: 1000;/*Ensures the notification stays on top of other elements*/
+    transition: opacity 0.5s ease;
+}
+
+.notification.show {
+    display: block;
+    opacity: 1;/*Makes the notification fully opaque*/
+}
+
+/* Add fade-in effect */
+.notification.show {
+    animation: fadeIn 0.5s ease;
+}
+
+

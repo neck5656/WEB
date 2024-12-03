@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post" onsubmit="loginUser(event)">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button class="btn">Login</button>
+        </form>
+        <p class="signup-link">Don't have an account? <a href="register.html">Sign Up</a></p>
+    </div>
+
+    <script>
+        function loginUser(event) {
+            event.preventDefault();
+
+            // Get input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Get registered data from localStorage
+            const registeredUsername = localStorage.getItem('registeredUsername');
+            const registeredPassword = localStorage.getItem('registeredPassword');
+
+            // Validate login credentials
+            if (username === registeredUsername && password === registeredPassword) {
+                // Successful login, redirect to Home page
+                window.location.href = 'Home.html';
+            } else {
+                // Show error message
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

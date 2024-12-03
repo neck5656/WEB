@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="cartstyle.css">
+  
+</head>
+<body>
+  <div class="nav-container">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav class="side-nav">
+        <ul>
+            <li class="nav-item active" onclick="moveIndicator(this)"><a href="Home.html">Home</a></li>
+            <li class="nav-item" onclick="moveIndicator(this)"><a href="cart.html">Your Cart</a></li>
+            <li class="nav-item" onclick="moveIndicator(this)"><a href="account.html">Account</a></li>
+            <li class="nav-item" onclick="moveIndicator(this)"><a href="contact.html">Contact us</a></li>
+        </ul>
+        <div class="indicator"></div>
+    </nav>
+</div>
+  <h1>Your Shopping Cart</h1>
+  <div class="cart-container">
+    <div class="cart-header">
+      <p>Product</p>
+      <p>Unit Price</p>
+      <p>Quantity</p>
+      <p>Total</p>
+      <p>Action</p>
+    </div>
+    <div id="cart-items">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <div class="cart-footer">
+      <p>Total: <span id="total-price">0 </span>VND</p>
+      <button class="btn" id="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+
+  
+  <div class="foot">
+   
+    
+  
+    <div class="additional-info">
+      <h2>Additional Information</h2>
+      <div class="info-sections">
+          <ul class="customer-service">
+              <li><strong>Customer Service</strong></li>
+              <li><i class="fa fa-phone"></i> Phone: 0793294018</li>
+              <li><i class="fa fa-envelope"></i> Email:nguyenvanvietcp@gmail.com</li>
+              <li><i class="fa fa-clock"></i> Hours: 9 AM - 6 PM, Mon - Fri</li>
+          </ul>
+          <ul class="store-info">
+              <li><strong>Store Locations</strong></li>
+              <li><i class="fa fa-map-marker"></i> Store 1: 123 Main St, HN</li>
+              <li><i class="fa fa-map-marker"></i> Store 2: 456 Oak Rd, Da Nang</li>
+              <li><i class="fa fa-map-marker"></i> Store 3: 789 Pine Ave, TP HCM</li>
+          </ul>
+          <ul class="quick-links">
+              <li><strong>Quick Links</strong></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              
+          </ul>
+      </div>
+  </div>
+    <footer class="footer">
+
+        <div>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/photo/?fbid=416698178145723&set=a.110535592095318">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>
+                            <!-- Facebook SVG Icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff" d="M22.675 0H1.325C.593 0 0 .592 0 1.324v21.351C0 23.407.592 24 1.325 24h11.494V14.706h-3.13v-3.622h3.13V8.413c0-3.1 1.893-4.787 4.657-4.787 1.324 0 2.463.1 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.312h3.591l-.467 3.622h-3.124V24h6.116c.73 0 1.323-.593 1.323-1.324V1.324C24 .593 23.407 0 22.675 0z"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/TheRock">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>
+                            <!-- Twitter SVG Icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff" d="M24 4.557a9.994 9.994 0 01-2.828.775 4.94 4.94 0 002.165-2.725c-.937.555-1.975.96-3.084 1.184a4.92 4.92 0 00-8.384 4.482A13.978 13.978 0 011.671 3.149a4.902 4.902 0 001.524 6.573 4.935 4.935 0 01-2.229-.616v.061a4.925 4.925 0 003.946 4.827 4.996 4.996 0 01-2.224.084 4.936 4.936 0 004.604 3.417A9.867 9.867 0 010 21.539a13.96 13.96 0 007.548 2.212c9.056 0 14.01-7.496 14.01-13.986 0-.213-.004-.426-.014-.637A10.012 10.012 0 0024 4.557z"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.com/channels/@me">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>
+                            <!-- Discord SVG Icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff" d="M19.54 0H4.46A4.46 4.46 0 000 4.46v15.08A4.46 4.46 0 004.46 24h12.61l-.59-2.05c1.97-.53 3.9-1.32 5.72-2.34l.67-1.14V4.46A4.46 4.46 0 0019.54 0zM9.54 16.16c-1.37 0-2.48-1.12-2.48-2.48 0-1.37 1.11-2.48 2.48-2.48s2.48 1.11 2.48 2.48c0 1.37-1.11 2.48-2.48 2.48zm8.95 0c-1.37 0-2.48-1.12-2.48-2.48 0-1.37 1.11-2.48 2.48-2.48s2.48 1.11 2.48 2.48c0 1.37-1.11 2.48-2.48 2.48zM12.26 4.92c-5.53 0-10.02 4.5-10.02 10.02 0 .16.01.32.02.47a9.975 9.975 0 004.95-2.64c-1.4-.62-2.7-1.37-3.89-2.26 2.21 1.83 4.9 3.09 7.9 3.4.05-.18.09-.36.15-.54A9.935 9.935 0 0012.26 4.92z"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://myaccount.google.com/?utm_source=OGB&utm_medium=app">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>
+                            <!-- Gmail SVG Icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff" d="M12 13.035L3.5 8.167V20.7a2.303 2.303 0 002.3 2.3h12.4a2.303 2.303 0 002.3-2.3V8.167L12 13.035zm-1.41-2.254L1.5 5.48V3.3a2.303 2.303 0 012.3-2.3h16.4a2.303 2.303 0 012.3 2.3v2.179L13.41 10.78a2.252 2.252 0 01-2.82 0z"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+  <script>
+    const cartItemsContainer = document.getElementById("cart-items");
+    const totalPriceElement = document.getElementById("total-price");
+    const checkoutButton = document.getElementById("checkout-btn");
+    
+
+    // Retrieve cart data from localStorage
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
+
+    // Populate the cart
+    cart.forEach((item, index) => {
+      item.quantity = item.quantity || 1; // Default quantity to 1 if not provided
+
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("cart-item");
+      cartItem.innerHTML = `
+        <p>${item.name}</p>
+        <p>$${parseInt(item.price).toLocaleString()}</p>
+        <input type="number" min="1" value="${item.quantity}" data-index="${index}" />
+        <p>$${(item.price * item.quantity).toLocaleString()}</p>
+        <button class="remove-btn" data-index="${index}">Remove</button>
+      `;
+      cartItemsContainer.appendChild(cartItem);
+      total += item.price * item.quantity;
+    });
+
+    totalPriceElement.textContent = total.toLocaleString();
+
+    // Update total price and cart data on quantity change
+    cartItemsContainer.addEventListener("input", (e) => {
+      const index = e.target.dataset.index;
+      const newQuantity = parseInt(e.target.value);
+      if (newQuantity > 0) {
+        cart[index].quantity = newQuantity;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        location.reload(); // Refresh the page to recalculate totals
+      }
+    });
+
+    // Remove item from cart
+    cartItemsContainer.addEventListener("click", (e) => {
+      if (e.target.classList.contains("remove-btn")) {
+        const index = e.target.dataset.index;
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Item removed from the cart.", "error");
+        location.reload(); // Refresh the page to update the cart
+      }
+    });
+
+    checkoutButton.addEventListener("click", () => {
+  if (total === 0) {
+    alert("Your cart is empty. Add items before checkout."); // Error alert
+  } else {
+    alert("Checkout successful! Thank you for your purchase."); // Success alert
+
+    // Clear the cart
+    localStorage.removeItem("cart");
+    cartItemsContainer.innerHTML = "";
+    total = 0;
+    totalPriceElement.textContent = total.toLocaleString();
+  }
+});
+function toggleMenu() {
+    const sideNav = document.querySelector('.side-nav');
+    const overlay = document.querySelector('.overlay');
+    sideNav.classList.toggle('show');
+    overlay.classList.toggle('show');
+}
+
+        function moveIndicator(element) {
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+            
+            // Save index of active item in sessionStorage
+            const index = [...items].indexOf(element);
+            sessionStorage.setItem('activeIndex', index);
+        }
+
+        // On page load, set the indicator position based on the saved index
+        window.addEventListener('load', () => {
+            const items = document.querySelectorAll('.nav-item');
+            const indicator = document.querySelector('.indicator');
+            const savedIndex = sessionStorage.getItem('activeIndex');
+            
+            if (savedIndex !== null) {
+                const activeItem = items[savedIndex];
+                activeItem.classList.add('active');
+                indicator.style.top = `${activeItem.offsetTop}px`;
+            }
+        });
+
+        // Adjust indicator position when transitioning to new pages
+        document.querySelectorAll('.nav-item').forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const indicator = document.querySelector('.indicator');
+                indicator.style.top = `${item.offsetTop}px`;
+            });
+        });
+  </script>
+</body>
+</html>

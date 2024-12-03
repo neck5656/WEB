@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="constyles.css">
+</head>
+<body>
+    <div class="nav-container">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav class="side-nav">
+        <ul>
+            <li class="nav-item active" onclick="moveIndicator(this)"><a href="Home.html">Home</a></li>
+            <li class="nav-item" onclick="moveIndicator(this)"><a href="cart.html">Your Cart</a></li>
+            <li class="nav-item" onclick="moveIndicator(this)"><a href="account.html">Account</a></li>
+            <li class="nav-item" onclick="moveIndicator(this)"><a href="contact.html">Contact us</a></li>
+        </ul>
+        <div class="indicator"></div>
+    </nav>
+</div>
+<div class="overlay" onclick="toggleMenu()"></div>
+
+<div class="form-container">
+    <div class="form">
+      <span class="heading">Please give us your comment</span>
+      <input placeholder="Name" type="text" class="input">
+      <input placeholder="Email" id="mail" type="email" class="input">
+      <textarea placeholder="your comment" rows="10" cols="30" id="message" name="message" class="textarea"></textarea>
+      <div class="button-container">
+        <div id="send-btn" class="send-button">Send</div>
+        <div class="reset-button-container">
+          <div id="reset-btn" class="reset-button">Reset</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+    // Add event listeners for the buttons
+  const sendButton = document.getElementById("send-btn");
+  const resetButton = document.getElementById("reset-btn");
+
+  // Alert for Send button
+  sendButton.addEventListener("click", () => {
+    alert("Your message has been sent!");
+  });
+
+  // Alert for Reset button
+  resetButton.addEventListener("click", () => {
+    alert("The form has been reset!");
+    // Optionally clear the form inputs
+    document.querySelector(".input").value = ""; // Clear Name
+    document.getElementById("mail").value = ""; // Clear Email
+    document.getElementById("message").value = ""; // Clear Message
+  });
+    function toggleMenu() {
+    const sideNav = document.querySelector('.side-nav');
+    const overlay = document.querySelector('.overlay');
+    sideNav.classList.toggle('show');
+    overlay.classList.toggle('show');
+    /*show nav menu*/
+}
+
+        function moveIndicator(element) {
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+            
+            // Save index of active item in sessionStorage
+            const index = [...items].indexOf(element);
+            sessionStorage.setItem('activeIndex', index);
+        }
+
+        // On page load, set the indicator position based on the saved index
+        window.addEventListener('load', () => {
+            const items = document.querySelectorAll('.nav-item');
+            const indicator = document.querySelector('.indicator');
+            const savedIndex = sessionStorage.getItem('activeIndex');
+            
+            if (savedIndex !== null) {
+                const activeItem = items[savedIndex];
+                activeItem.classList.add('active');
+                indicator.style.top = `${activeItem.offsetTop}px`;
+            }
+        });
+
+        // Adjust indicator position when transitioning to new pages
+        document.querySelectorAll('.nav-item').forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const indicator = document.querySelector('.indicator');
+                indicator.style.top = `${item.offsetTop}px`;
+            });
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Shop</title>
+    <link rel="stylesheet" href="hstyle.css">
+</head>
+<body>
+
+   
+    <!-- Side Navigation Container -->
+    <div class="nav-container">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav class="side-nav">
+            <ul>
+                <li class="nav-item active" onclick="moveIndicator(this)"><a href="Home.html">Home</a></li>
+                <li class="nav-item" onclick="moveIndicator(this)"><a href="cart.html">Your Cart</a></li>
+                <li class="nav-item" onclick="moveIndicator(this)"><a href="account.html">Account</a></li>
+                <li class="nav-item" onclick="moveIndicator(this)"><a href="contact.html">Contact us</a></li>
+            </ul>
+            <div class="indicator"></div>
+        </nav>
+    </div>
+    <div class="overlay" onclick="toggleMenu()"></div>
+    <div class="logo-container">
+        <span class="logo-text">Stardust Cellphone</span>
+        <img src="/du8xx6bewqrhgq867z6cfud2gdbzjzr.png" alt="Star Icon" class="star-icon">
+    </div>
+<div class="search-container">
+  <input type="text" placeholder="Search for products..." class="search-box">
+  <button class="search-btn">Search</button>
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="color">Ultimate sales <h1> shop opening discount</h1></h1>
+            <p>Explore the best deals and newest models at Cellphone Shop.</p>
+            
+        </div>
+    </section>
+    
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <h2 class="fp">Featured Products</h2>
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product" data-name="iphone 16 blue" data-price="22290000">
+                <img src="/iphone-16-blue-600x600.png" alt="Product 1">
+                <h3>iPhone 16 Blue</h3>
+                <!-- Original Price -->
+                <p class="original-price">
+                    <s>22,290,000 VND</s>
+                </p>
+                <!-- Discounted Price -->
+                <p class="discounted-price">
+                    17,387,800 VND
+                </p>
+                <!-- Discount Percentage -->
+                <p class="discount-percentage">
+                    -22%
+                </p>
+                <button class="btn-secondary" onclick="addToCart('iPhone 16 Blue', 17387800)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            <!-- Product 2 -->
+            
+            <div class="product" data-name="Redmi 13 Blue" data-price="4290000">
+                <img src="/redmi-13-blue-thumb-600x600.jpg" alt="Redmi 13 Blue">
+                <h3>Redmi 13 Blue</h3>
+                <p class="original-price">
+                    <s>4,290,000 VND</s>
+                </p>
+                <p class="discounted-price">3,432,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('Redmi 13 Blue', 3432000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Samsung Galaxy A55 5G" data-price="11490000">
+                <img src="/samsung-galaxy-a55-5g-xanh-thumb-1-600x600.jpg" alt="Samsung Galaxy A55 5G">
+                <h3>Samsung Galaxy A55 5G</h3>
+                <p class="original-price">
+                    <s>11,490,000 VND</s>
+                </p>
+                <p class="discounted-price">9,192,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('Samsung Galaxy A55 5G', 9192000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Samsung Galaxy S24 Ultra" data-price="29990000">
+                <img src="/samsung-galaxy-s24-ultra-grey-thumbnew-600x600.jpg" alt="Samsung Galaxy S24 Ultra">
+                <h3>Samsung Galaxy S24 Ultra</h3>
+                <p class="original-price">
+                    <s>29,990,000 VND</s>
+                </p>
+                <p class="discounted-price">23,992,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('Samsung Galaxy S24 Ultra', 23992000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Xiaomi 14T Pro" data-price="16990000">
+                <img src="/xiaomi-14t-pro-black-thumb-600x600.jpg" alt="Xiaomi 14T Pro">
+                <h3>Xiaomi 14T Pro</h3>
+                <p class="original-price">
+                    <s>16,990,000 VND</s>
+                </p>
+                <p class="discounted-price">12,742,500 VND</p>
+                <p class="discount-percentage">-25%</p>
+                <button class="btn-secondary" onclick="addToCart('Xiaomi 14T Pro', 12742500)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Xiaomi Redmi 14C" data-price="3490000">
+                <img src="/xiaomi-redmi-14c-blue-1-600x600.jpg" alt="Xiaomi Redmi 14C">
+                <h3>Xiaomi Redmi 14C</h3>
+                <p class="original-price">
+                    <s>3,490,000 VND</s>
+                </p>
+                <p class="discounted-price">2,792,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('Xiaomi Redmi 14C', 2792000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Xiaomi Redmi Note 13" data-price="6490000">
+                <img src="/xiaomi-redmi-note-13-green-thumb-600x600.jpg" alt="Xiaomi Redmi Note 13">
+                <h3>Xiaomi Redmi Note 13</h3>
+                <p class="original-price">
+                    <s>6,490,000 VND</s>
+                </p>
+                <p class="discounted-price">5,841,000 VND</p>
+                <p class="discount-percentage">-10%</p>
+                <button class="btn-secondary" onclick="addToCart('Xiaomi Redmi Note 13', 5841000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Oppo Reno12 5G" data-price="12000000">
+                <img src="/oppo-reno12-5g-sliver-thumb-1-600x600.jpg" alt="Oppo Reno12 5G">
+                <h3>Oppo Reno12 5G</h3>
+                <p class="original-price">
+                    <s>12,000,000 VND</s>
+                </p>
+                <p class="discounted-price">9,600,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('Oppo Reno12 5G', 9600000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Realme Note 60" data-price="3090000">
+                <img src="/realme-note-60-black-thumb-600x600.jpg" alt="Realme Note 60">
+                <h3>Realme Note 60</h3>
+                <p class="original-price">
+                    <s>3,090,000 VND</s>
+                </p>
+                <p class="discounted-price">2,472,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('Realme Note 60', 2472000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Samsung Galaxy Z Flip6" data-price="26990000">
+                <img src="/samsung-galaxy-z-flip6-xanh-thumbn-600x600.jpg" alt="Samsung Galaxy Z Flip6">
+                <h3>Samsung Galaxy Z Flip6</h3>
+                <p class="original-price">
+                    <s>26,990,000 VND</s>
+                </p>
+                <p class="discounted-price">21,592,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('Samsung Galaxy Z Flip6', 21592000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            
+            <div class="product" data-name="Samsung Galaxy Z Fold6" data-price="41990000">
+                <img src="/samsung-galaxy-z-fold6-xam-thumbn-600x600.jpg" alt="Samsung Galaxy Z Fold6">
+                <h3>Samsung Galaxy Z Fold6</h3>
+                <p class="original-price">
+                    <s>41,990,000 VND</s>
+                </p>
+                <p class="discounted-price">33,592,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('Samsung Galaxy Z Fold6', 33592000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>
+            <div class="product" data-name="iphone 16 vpro max" data-price="27992000">
+                <img src="/iphone-16-pro-max-black-thumb-600x600.jpg" alt="iphone 16 pro max">
+                <h3>iphone 16 pro max</h3>
+                <p class="original-price">
+                    <s>34,990,000 VND</s>
+                </p>
+                <p class="discounted-price">27,592,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('iphone 16 pro max', 27992000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>            <div class="product" data-name="honor x5 plus" data-price="8792000">
+                <img src="/honor-x5-plus-xanh-thumb-600x600.jpg" alt="honor x5 plus">
+                <h3>honor x5 plus</h3>
+                <p class="original-price">
+                    <s>10,990,000 VND</s>
+                </p>
+                <p class="discounted-price">8,592,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('honor x5 plus', 8792000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>            <div class="product" data-name="red magic supernova" data-price="15992000">
+                <img src="/red-magic-supernova_1.webp" alt="red magic supernova">
+                <h3>red magic supernova</h3>
+                <p class="original-price">
+                    <s>19,990,000 VND</s>
+                </p>
+                <p class="discounted-price">15,592,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('red magic supernova', 15992000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>            <div class="product" data-name="asus rog phone 6-12gb 256gb" data-price="11992000">
+                <img src="/asus-rog-phone-6-12gb-256gb_1_1.webp" alt="asus rog phone 6-12gb 256gb">
+                <h3>asus rog phone 6-12gb 256gb</h3>
+                <p class="original-price">
+                    <s>14,990,000 VND</s>
+                </p>
+                <p class="discounted-price">11,592,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('asus rog phone 6-12gb 256gb', 11992000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>            <div class="product" data-name="nubia redmagic 8s pro 16gb 512gb" data-price=" 16792000">
+                <img src="/nubia-redmagic-8s-pro-16gb-512gb-transparent_1_.webp" alt="nubia redmagic 8s pro 16gb 512gb">
+                <h3>nubia redmagic 8s pro 16gb 512gb</h3>
+                <p class="original-price">
+                    <s>20,990,000 VND</s>
+                </p>
+                <p class="discounted-price">16,999,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('nubia redmagic 8s pro 16gb 512gb',  16792000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>            <div class="product" data-name="realme note 50" data-price=" 1832000">
+                <img src="/realme-note-50-blue-thumb-600x600.jpg" alt="realme note 50">
+                <h3>realme note 50</h3>
+                <p class="original-price">
+                    <s>2,290,000 VND</s>
+                </p>
+                <p class="discounted-price">1,892,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('realme note 50', 1832000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+            </div>            <div class="product" data-name="realme 13 plus" data-price="7992000">
+                <img src="/realme-13-plus-tim-thumb-600x600.jpg" alt="realme 13 plus">
+                <h3>realme 13 plus</h3>
+                <p class="original-price">
+                    <s>9,990,000 VND</s>
+                </p>
+                <p class="discounted-price">7,992,000 VND</p>
+                <p class="discount-percentage">-20%</p>
+                <button class="btn-secondary" onclick="addToCart('realme 13 plus', 7992000)">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="cart-icon">🛒</span>
+                </button>
+
+            
+    </section>
+
+<div class="foot">
+   
+    
+  
+    <div class="additional-info">
+        <h2>Additional Information</h2>
+        <div class="info-sections">
+            <ul class="customer-service">
+                <li><strong>Customer Service</strong></li>
+                <li><i class="fa fa-phone"></i> Phone: 0793294018</li>
+                <li><i class="fa fa-envelope"></i> Email:nguyenvanvietcp@gmail.com</li>
+                <li><i class="fa fa-clock"></i> Hours: 9 AM - 6 PM, Mon - Fri</li>
+            </ul>
+            <ul class="store-info">
+                <li><strong>Store Locations</strong></li>
+                <li><i class="fa fa-map-marker"></i> Store 1: 123 Main St, HN</li>
+                <li><i class="fa fa-map-marker"></i> Store 2: 456 Oak Rd, Da Nang</li>
+                <li><i class="fa fa-map-marker"></i> Store 3: 789 Pine Ave, TP HCM</li>
+            </ul>
+            <ul class="quick-links">
+                <li><strong>Quick Links</strong></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    
+    <footer class="footer">
+
+        <div>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/photo/?fbid=416698178145723&set=a.110535592095318">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>
+                            <!-- Facebook SVG Icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff" d="M22.675 0H1.325C.593 0 0 .592 0 1.324v21.351C0 23.407.592 24 1.325 24h11.494V14.706h-3.13v-3.622h3.13V8.413c0-3.1 1.893-4.787 4.657-4.787 1.324 0 2.463.1 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.312h3.591l-.467 3.622h-3.124V24h6.116c.73 0 1.323-.593 1.323-1.324V1.324C24 .593 23.407 0 22.675 0z"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/TheRock">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>
+                            <!-- Twitter SVG Icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff" d="M24 4.557a9.994 9.994 0 01-2.828.775 4.94 4.94 0 002.165-2.725c-.937.555-1.975.96-3.084 1.184a4.92 4.92 0 00-8.384 4.482A13.978 13.978 0 011.671 3.149a4.902 4.902 0 001.524 6.573 4.935 4.935 0 01-2.229-.616v.061a4.925 4.925 0 003.946 4.827 4.996 4.996 0 01-2.224.084 4.936 4.936 0 004.604 3.417A9.867 9.867 0 010 21.539a13.96 13.96 0 007.548 2.212c9.056 0 14.01-7.496 14.01-13.986 0-.213-.004-.426-.014-.637A10.012 10.012 0 0024 4.557z"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.com/channels/@me">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>
+                            <!-- Discord SVG Icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff" d="M19.54 0H4.46A4.46 4.46 0 000 4.46v15.08A4.46 4.46 0 004.46 24h12.61l-.59-2.05c1.97-.53 3.9-1.32 5.72-2.34l.67-1.14V4.46A4.46 4.46 0 0019.54 0zM9.54 16.16c-1.37 0-2.48-1.12-2.48-2.48 0-1.37 1.11-2.48 2.48-2.48s2.48 1.11 2.48 2.48c0 1.37-1.11 2.48-2.48 2.48zm8.95 0c-1.37 0-2.48-1.12-2.48-2.48 0-1.37 1.11-2.48 2.48-2.48s2.48 1.11 2.48 2.48c0 1.37-1.11 2.48-2.48 2.48zM12.26 4.92c-5.53 0-10.02 4.5-10.02 10.02 0 .16.01.32.02.47a9.975 9.975 0 004.95-2.64c-1.4-.62-2.7-1.37-3.89-2.26 2.21 1.83 4.9 3.09 7.9 3.4.05-.18.09-.36.15-.54A9.935 9.935 0 0012.26 4.92z"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://myaccount.google.com/?utm_source=OGB&utm_medium=app">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span>
+                            <!-- Gmail SVG Icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff" d="M12 13.035L3.5 8.167V20.7a2.303 2.303 0 002.3 2.3h12.4a2.303 2.303 0 002.3-2.3V8.167L12 13.035zm-1.41-2.254L1.5 5.48V3.3a2.303 2.303 0 012.3-2.3h16.4a2.303 2.303 0 012.3 2.3v2.179L13.41 10.78a2.252 2.252 0 01-2.82 0z"/>
+                            </svg>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+    <script>
+       
+       const addToCartButtons = document.querySelectorAll(".button-text");
+    
+
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const productElement = event.target.closest(".product");
+        const id = productElement.dataset.id;
+        const name = productElement.dataset.name;
+        const price = productElement.dataset.price;
+        
+
+        // Retrieve existing cart data from localStorage
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Add the product to the cart
+        cart.push({ id, name, price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Show notification
+        alert(`${name} added to cart!`);
+      });
+    });
+
+
+    function goToCart() {
+      window.location.href = "cart.html";
+    }
+
+function toggleMenu() {
+    const sideNav = document.querySelector('.side-nav');
+    const overlay = document.querySelector('.overlay');
+    sideNav.classList.toggle('show');
+    overlay.classList.toggle('show');
+    /*show nav menu*/
+}
+
+        function moveIndicator(element) {
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+            
+            // Save index of active item in sessionStorage
+            const index = [...items].indexOf(element);
+            sessionStorage.setItem('activeIndex', index);
+        }
+
+        // On page load, set the indicator position based on the saved index
+        window.addEventListener('load', () => {
+            const items = document.querySelectorAll('.nav-item');
+            const indicator = document.querySelector('.indicator');
+            const savedIndex = sessionStorage.getItem('activeIndex');
+            
+            if (savedIndex !== null) {
+                const activeItem = items[savedIndex];
+                activeItem.classList.add('active');
+                indicator.style.top = `${activeItem.offsetTop}px`;
+            }
+        });
+
+        // Adjust indicator position when transitioning to new pages
+        document.querySelectorAll('.nav-item').forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const indicator = document.querySelector('.indicator');
+                indicator.style.top = `${item.offsetTop}px`;
+            });
+        });
+    </script>
+</body>
+</html>
